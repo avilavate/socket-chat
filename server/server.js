@@ -9,6 +9,8 @@ server.on('connection',(socket)=>{
     sockets.push({'id':socket.id,'socket':socket});
     socket.write(`Welcome client id: ${socket.id}`)
     console.log(`server connected ${socket.id}`);
+   
+   
     socket.on('data',(data)=>{
     sockets.forEach(s=>{
         
@@ -17,6 +19,13 @@ server.on('connection',(socket)=>{
     })
     });
     socket.setEncoding('UTF8');
+
+    socket.on('end',()=>{
+        console.log(`${socket.id}: discounnected`);
+        
+        delete sockets[socket.id];
+    });
+
    });
 
 
