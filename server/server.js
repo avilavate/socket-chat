@@ -3,7 +3,7 @@ const netSock= require('net');
 server = netSock.createServer();
 let counter=0;
 let sockets=[];
-
+console.log('\x1Bc')
 server.on('connection',(socket)=>{
     socket.id=counter++;
     sockets.push({'id':socket.id,'socket':socket});
