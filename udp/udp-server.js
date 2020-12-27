@@ -8,7 +8,7 @@ udpSocket.bind(port, hostname);
 
 
 udpSocket.on('listening',()=>console.log('UDP server listening at 3333'));
-udpSocket.on('message',(msg, rinfo)=>console.log(`${rinfo}, ${msg}`));
+udpSocket.on('message',(msg, rinfo)=>console.log(`${rinfo.address}:${rinfo.port} >  ${msg}`));
 
 
 

@@ -1,7 +1,6 @@
 const udp=require('dgram');
 const config=require('./udp-config');
 
-console.log(config);
 const udpClient= udp.createSocket('udp4');
 
 udpClient.send('Hello UDP Server',config.udpConfig.port,config.udpConfig.hostname,(err)=>{
